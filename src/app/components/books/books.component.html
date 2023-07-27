@@ -1,0 +1,5 @@
+<ul class="flex flex-wrap justify-start">
+  <ng-container *ngFor="let book of books; let i = index">
+    <app-book [book]="book"></app-book>
+  </ng-container>
+</ul>

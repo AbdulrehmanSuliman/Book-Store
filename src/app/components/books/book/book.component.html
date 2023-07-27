@@ -1,0 +1,23 @@
+<li class="flex justify-between p-3 border m-3 w-fit sm:w-96 rounded-md">
+  <img [src]="book.url" [alt]="book.name" width="100" />
+  <div class="flex flex-col text-center justify-around">
+    <p class="px-2">
+      {{ book.name | titlecase }} by {{ book.author | titlecase }}
+    </p>
+    <p class="currency">{{ book.amount | currency }}</p>
+    <button
+      class="bg-yellow-500 w-fit p-2 mx-auto rounded-md font-medium"
+      *ngIf="!isInCart"
+      (click)="addToCart()"
+    >
+      Add to Cart
+    </button>
+    <button
+      class="bg-red-500 w-fit p-2 mx-auto rounded-md"
+      *ngIf="isInCart"
+      (click)="removeFromCart()"
+    >
+      Remove from Cart
+    </button>
+  </div>
+</li>
